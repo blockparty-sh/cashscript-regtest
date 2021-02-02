@@ -1,0 +1,20 @@
+version: "3.5"
+services:
+  bitcoin:
+    image: "bitcoin-cash-node"
+    restart: always
+    build:
+      context: "./bitcoin-cash-node"
+    command: "bitcoind"
+    healthcheck:
+      test: ["CMD", "/entrypoint.sh", "bitcoin-cli", "getblockchaininfo"]
+    expose:
+      - "18333"
+    ports:
+      - "18444:18443"
+    volumes:
+      - ./bitcoin-cash-node/bitcoin.conf:/data/bitcoin.conf
+    networks:
+      - regnet
+networks:
+  regnet:
