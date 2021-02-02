@@ -1,6 +1,6 @@
 # CashScript Regtest
 
-An easy way to run CashScript programs using regtest mode.
+An easy way to run [CashScript](https://cashscript.org/) programs using regtest mode.
 
 ## Getting Started
 
